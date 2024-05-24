@@ -1,0 +1,57 @@
+body {
+    background-image: url("coffee3.jpg");
+    background-repeat: no-repeat;
+}
+.navbar {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+}
+.nav-brand {
+    font-family: fantasy;
+}
+.hero-section {
+    background-color: burlywood;
+    padding: 100px 0;
+}
+
+.hero-section .carousel {
+    margin-bottom: 50px;
+}
+
+.hero-section .carousel-img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 20;
+    margin-bottom: 30px;
+}
+
+.products-section .card {
+    margin-bottom: 30px;
+}
+
+.contact-section {
+    background: white;
+    padding: 60px 0;
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.card img{
+    height: 300px;
+    object-fit: cover;
+}
+
+ol {
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
