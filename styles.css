@@ -1,57 +1,305 @@
-body {
-    background-image: url("Images/coffee3.jpg");
-    background-repeat: no-repeat;
-}
-.navbar {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    justify-content: center;
-}
-.nav-brand {
-    font-family: fantasy;
-}
-.hero-section {
-    background-color: burlywood;
-    padding: 100px 0;
+/* Base styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("Images/coffee3.jpg");
+  color: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.hero-section .carousel {
-    margin-bottom: 50px;
+/* Top bar styles */
+.top-bar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.hero-section .carousel-img {
-    height: 400px;
-    object-fit: cover;
+.top-bar input {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
 }
 
-.hero-section h1 {
-    font-size: 48px;
+.top-bar .login {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Header and navigation styles */
+header {
+  background-color: #444;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  margin: 20px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  position: relative;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  display: block;
+  transition: background 0.3s;
+}
+nav ul li a:hover {
+  background-color: #555;
+}
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+}
+nav ul ul li {
+  float: none;
+}
+nav ul li:hover > ul {
+  display: block;
+}
+
+/* Section styles */
+section {
+  padding: 40px 20px;
+  text-align: center;
+}
+.products, .brands, .insta-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.product, .brands img, .insta-images img {
+  width: calc(25% - 20px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.product:hover, .brands img:hover, .insta-images img:hover {
+  transform: scale(1.05);
+}
+.product img {
+  width: 100%;
+}
+.product p {
+  margin: 10px 0;
+}
+
+/* Best sellers section */
+.best-sellers {
+  position: relative;
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+.best-sellers img {
+  width: 100%;
+  height: auto;
+  opacity: 0.7;
+}
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+.title {
+  font-size: 2em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.title span {
+  display: block;
+  font-size: 1.2em;
+}
+
+/* Footer styles */
+footer {
+  background-color: #444;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+footer .footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+footer .footer-content div {
+  margin: 10px 20px;
+}
+footer a {
+  color: #ffc107;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .product {
+    flex: 1 1 calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-brand h1 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul li a {
+    padding: 10px;
+  }
+  .products, .brands, .insta-images {
+    flex-direction: column;
+  }
+  .product, .brands img, .insta-images img {
+    width: 80%;
     margin-bottom: 20px;
+  }
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .top-bar input {
+    margin-top: 10px;
+    width: 100%;
+  }
+  .best-sellers img {
+    height: auto;
+  }
 }
 
-.hero-section p {
-    font-size: 20;
-    margin-bottom: 30px;
+@media (max-width: 576px) {
+  .product {
+    flex: 1 1 calc(50% - 20px);
+  }
+  .caption .title {
+    font-size: 1.5em;
+  }
 }
 
-.products-section .card {
-    margin-bottom: 30px;
+@media (max-width: 480px) {
+  .product {
+    flex: 1 1 100%;
+  }
+  .caption .title {
+    font-size: 1.2em;
+  }
+  .best-sellers img {
+    height: auto;
+  }
+  .our-story .content {
+    flex-direction: column;
+  }
+  .our-story .bottom-image img {
+    width: 100%;
+    height: auto;
+  }
 }
 
-.contact-section {
-    background: white;
-    padding: 60px 0;
+.insta-images img {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
 }
 
-.contact-section h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-.card img{
-    height: 300px;
-    object-fit: cover;
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-ol {
-    text-align: left;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.product {
+  flex: 1 1 calc(25% - 20px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.product:hover {
+  transform: scale(1.05);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  flex-grow: 1;
+}
+
+.product p {
+  margin: 10px 0;
+}
+
+.product .btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.product .btn:hover {
+  background-color: #0056b3;
+}
+
+.card h2, .our-story h2 {
+  color: black;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.our-story {
+  background-image: url("Images/coffee8.jpg");
+  color: black;
+}
+
+.bottom-image img {
+  width: 700px;
+  height: 700px;
+}
+
+.favorite-brands h2 {
+  color: black;
+  text-decoration: underline;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
