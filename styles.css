@@ -471,3 +471,46 @@ footer a:hover {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* Our Story Section */
+.our-story-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 40px 20px;
+}
+
+.our-story {
+  flex: 1;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: to make text more readable */
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bottom-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .our-story-section {
+    flex-direction: column;
+  }
+
+  .bottom-image img {
+    width: 100%;
+    height: auto;
+  }
+}
