@@ -50,27 +50,38 @@
 <!-- New Arrivals Section -->
 <section class="new-arrivals card" id="new-arrivals">
     <h2>New Arrivals</h2>
-    <div class="products">
-        <div class="product">
-            <img src="Images/Cappuccino.jpeg" alt="Cappuccino">
-            <p>Cappuccino</p>
-            <a href="#" class="btn btn-primary">Order Now</a>
+    <div class="slider-container">
+        <button class="slider-button prev" id="prev">&#10094;</button>
+        <div class="slider-wrapper">
+            <div class="slider">
+                <div class="product">
+                    <img src="Images/Cappuccino.jpeg" alt="Cappuccino">
+                    <p>Cappuccino</p>
+                    <a href="#" class="btn btn-primary">Order Now</a>
+                </div>
+                <div class="product">
+                    <img src="Images/Espresso.png" alt="Espresso">
+                    <p>Espresso</p>
+                    <a href="#" class="btn btn-primary">Order Now</a>
+                </div>
+                <div class="product">
+                    <img src="Images/Macchiatto.jpg" alt="Macchiatto">
+                    <p>Macchiatto</p>
+                    <a href="#" class="btn btn-primary">Order Now</a>
+                </div>
+                <div class="product">
+                    <img src="Images/Americano.jpg" alt="Americano">
+                    <p>Americano</p>
+                    <a href="#" class="btn btn-primary">Order Now</a>
+                </div>
+                <div class="product">
+                    <img src="Images/Icedcoffee.jpg" alt="Icedcoffee">
+                    <p>Iced Coffee</p>
+                    <a href="#" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
         </div>
-        <div class="product">
-            <img src="Images/Espresso.png" alt="Espresso">
-            <p>Espresso</p>
-            <a href="#" class="btn btn-primary">Order Now</a>
-        </div>
-        <div class="product">
-            <img src="Images/Macchiatto.jpg" alt="Macchiatto">
-            <p>Macchiatto</p>
-            <a href="#" class="btn btn-primary">Order Now</a>
-        </div>
-       <div class="product">
-            <img src="Images/Americano.jpg" alt="Americano">
-            <p>Americano</p>
-            <a href="#" class="btn btn-primary">Order Now</a>
-        </div>
+        <button class="slider-button next" id="next">&#10095;</button>
     </div>
 </section>
 <hr/>
@@ -148,6 +159,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <script>
     $(document).ready(function() {
   $('a[href^="#"]').click(function(event) {
@@ -158,5 +170,22 @@
   });
 });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sliderWrapper = document.querySelector('.slider-wrapper');
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+        
+        next.addEventListener('click', () => {
+            sliderWrapper.scrollBy({ left: sliderWrapper.clientWidth, behavior: 'smooth' });
+        });
+
+        prev.addEventListener('click', () => {
+            sliderWrapper.scrollBy({ left: -sliderWrapper.clientWidth, behavior: 'smooth' });
+        });
+    });
+</script>
+
+
 </body>
 </html>
